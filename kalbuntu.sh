@@ -7,6 +7,12 @@ cd ~/Apps
 echo -e "\033[1;32m\n[+] Installing Metasploit..."
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 rm msfinstall
+echo -e "\033[1;32m\n[+] Cloning social-engineer-toolkit..."
+git clone https://github.com/trustedsec/social-engineer-toolkit/ set/
+cd set
+echo -e "\033[1;32m\n[*] Installing SET..."
+pip install -r requirements.txt
+cd ..
 echo -e "\033[1;32m\n[+] Cloning Wordlist-Generator..."
 git clone https://github.com/Codex-Major/Wordlist-Generator
 echo -e "\033[1;32m\n[+] Cloning exploit-database..."
@@ -19,7 +25,7 @@ git clone https://github.com/SecureAuthCorp/impacket
 cd ~/Apps/impacket
 echo -e "\033[1;32m\n[*] Installing impacket..."
 python3 -m pip install .
-echo -e "\033[1;32m\n[!] Attempting to mkdir /usr/share/wordlists"
+echo -e "\033[1;32m\n[!] Attempting to mkdir /usr/share/wordlists..."
 sudo mkdir /usr/share/wordlists
 cd /usr/share/wordlists
 echo -e "\033[1;32m\n[+] Cloning SecLists..."
