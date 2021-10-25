@@ -1,5 +1,5 @@
 # Kalbuntu
-Bash script to install all of my favorite tools from Kali on Ubuntu-20.04
+Bash script to install all of my favorite tools from Kali on Ubuntu-20.04 so's I can get to red-teaming ASAP.
 # Included tools
     neofetch
     curl
@@ -15,6 +15,8 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04
     proxychains4
     nikto
     masscan
+    recon-ng
+    python3-pip
     
 # Other things
     metasploit-framework
