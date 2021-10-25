@@ -31,10 +31,10 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's 
     wpscan
     
 # `git clone`s these repos... (and installs them accordingly.)
+    Exploitdb------------https://github.com/offensive-security/exploitdb.git
+    Impacket-------------https://github.com/SecureAuthCorp/impacket
     Metasploit-----------https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb
+    Responder------------https://github.com/trustedsec/Responder
+    SEToolkit------------https://github.com/trustedsec/social-engineer-toolkit
     SeclLists------------https://github.com/danielmiessler/SecLists
     Wordlist-Generator---https://github.com/Codex-Major/Wordlist-Generator
-    Impacket-------------https://github.com/SecureAuthCorp/impacket
-    Exploitdb------------https://github.com/offensive-security/exploitdb.git
-    SEToolkit------------https://github.com/trustedsec/social-engineer-toolkit
-    Responder------------https://github.com/trustedsec/Responder
