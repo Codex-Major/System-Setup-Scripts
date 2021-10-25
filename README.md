@@ -1,5 +1,5 @@
 # Kalbuntu
-Bash script to install all of my favorite tools from Kali on Ubuntu-20.04 so's I can get to red-teaming ASAP. (This currently doesnt include my GUI apps... which may be added here soon.)
+Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's I can get to red-teaming ASAP. (This currently doesnt include my GUI apps... which may be added here soon.)
 # Downloads these stuffs
     neofetch
     curl
