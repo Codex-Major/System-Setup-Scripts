@@ -42,5 +42,7 @@ sudo mkdir /usr/share/wordlists
 cd /usr/share/wordlists
 echo -e "\033[1;32m\n[+] Cloning SecLists..."
 sudo git clone https://github.com/danielmiessler/SecLists
+echo -e "\033[1;32m\n[!] Making sure your distro has an update and upgrade..."
+sudo apt update;sudo apt upgrade -y
 echo -e "\033[1;32m\n[!] All done!"
 echo -e "\033[1;32m[*] Clean up with - cd ..;sudo rm -r kalbuntu"
