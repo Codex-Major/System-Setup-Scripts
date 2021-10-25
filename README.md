@@ -1,7 +1,8 @@
 # Kalbuntu
 Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's I can get to red-teaming ASAP. (This currently doesnt include my GUI apps... which may be added here soon.)
-# Downloads these stuffs
+# `apt install`s these stuffs
     neofetch
+    git
     curl
     dirb
     gobuster
@@ -18,8 +19,10 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's 
     recon-ng
     python3-pip
     postgresql
+    steghide
+    exiftool
     
-# Other stuffs...
+# `git`s these stuffs...
     metasploit-framework
     SeclLists------------https://github.com/danielmiessler/SecLists
     Wordlist-Generator---https://github.com/Codex-Major/Wordlist-Generator
