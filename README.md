@@ -11,10 +11,12 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's 
     dirb
     exiftool
     gobuster
+    hashcat
     hydra
     john
     masscan
     neofetch
+    net-tools
     nikto
     nmap
     pipx
@@ -27,6 +29,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's 
     sqlite3
     sqlmap
     steghide
+    vim
     wfuzz
     wpscan
     
