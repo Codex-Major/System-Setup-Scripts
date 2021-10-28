@@ -10,6 +10,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's 
     curl
     dirb
     exiftool
+    firefox
     gobuster
     hashcat
     hydra
@@ -29,6 +30,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's 
     sqlite3
     sqlmap
     steghide
+    subl
     vim
     wfuzz
     wpscan
