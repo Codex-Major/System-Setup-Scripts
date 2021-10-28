@@ -27,6 +27,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's 
     python3-pip
     recon-ng
     ruby
+    snapd
     sqlite3
     sqlmap
     steghide
