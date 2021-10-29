@@ -2,7 +2,9 @@
 Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's I can get to red-teaming ASAP. 
 
 # Usage
-  `git clone https://github.com/Codex-Major/kalbuntu;cd kalbuntu;chmod +x kalbuntu.sh;./kalbuntu.sh`
+  `git clone https://github.com/Codex-Major/Ubuntu20.04-Setup-Scripts`
+  
+  `cd Ubuntu20.04-Setup-Scripts;chmod +x kalbuntu.sh;./kalbuntu.sh`
 
   ! To use GUI apps, install vcxsrv on your host... https://sourceforge.net/projects/vcxsrv/
   
