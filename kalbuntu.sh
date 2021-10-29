@@ -9,7 +9,7 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 echo -e "\033[1;32m[+] Installing WPScan..."
-gem install wpscan
+sudo gem install wpscan
 echo -e "\033[1;32m[+] Installing pipx..."
 python3 -m pip install pipx
 pipx ensurepath
