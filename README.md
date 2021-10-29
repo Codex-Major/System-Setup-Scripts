@@ -34,6 +34,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so's 
     proxychains4
     python3
     python3-pip
+    python3-venv
     recon-ng
     ruby
     snapd
