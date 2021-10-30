@@ -2,7 +2,7 @@
 echo -e "\033[1;32m\n[*] Ensuring that your distro is up to date..."
 sudo apt update && sudo apt upgrade -y
 echo -e "\033[1;32m\n[+] Installing apt packages..."
-sudo apt install -y build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr apt-transport-https ruby python3 python3-pip python3-venv net-tools neofetch gobuster wfuzz nmap john aircrack-ng dirb sqlmap hydra proxychains4 nikto masscan recon-ng steghide libimage-exiftool-perl vim hashcat snapd firefox
+sudo apt install -y build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr apt-transport-https ruby python3 python3-pip python3-venv net-tools neofetch gobuster wfuzz nmap john aircrack-ng dirb sqlmap hydra proxychains4 nikto masscan recon-ng steghide libimage-exiftool-perl vim hashcat snapd firefox wireshark
 echo -e "\033[1;32m[+] Installing Sublime text editor..."
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -25,8 +25,8 @@ echo -e "\033[1;32m\n[+] Installing Metasploit..."
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 rm msfinstall
 echo -e "\033[1;32m\n[+] Cloning social-engineer-toolkit..."
-git clone https://github.com/trustedsec/social-engineer-toolkit/ set/
-cd set
+git clone https://github.com/trustedsec/social-engineer-toolkit/ SET/
+cd SET
 echo -e "\033[1;32m\n[*] Installing SET..."
 pip install -r requirements.txt
 sudo python3 setup.py
@@ -35,7 +35,6 @@ echo -e "\033[1;32m\n[+] Cloning Responder..."
 git clone https://github.com/trustedsec/Responder
 echo -e "\033[1;32m\n[*] Creating alias for Responder.py ..."
 sudo echo "alias responder='python3 ~/Apps/Responder/Responder.py'" >> ~/.bash_aliases
-echo "alias responder='python3 ~/Apps/Responder/Responder.py'" >> ~/.bash_aliases
 source ~/.bash_aliases
 echo -e "\033[1;32m\n[+] Cloning Wordlist-Generator..."
 git clone https://github.com/Codex-Major/Wordlist-Generator
@@ -49,6 +48,13 @@ git clone https://github.com/SecureAuthCorp/impacket
 cd ~/Apps/impacket
 echo -e "\033[1;32m\n[*] Installing impacket..."
 python3 -m pip install .
+cd ..
+echo -e "\033[1;32m\n[*] Installing theHarvester..."
+git clone https://github.com/laramies/theHarvester
+sudo pip install aiohttp
+cd theHarvester
+sudo python3 setup.py install
+cd /usr/share
 echo -e "\033[1;32m\n[!] Attempting to mkdir /usr/share/wordlists..."
 sudo mkdir /usr/share/wordlists
 cd /usr/share/wordlists
@@ -61,3 +67,4 @@ echo -e "\033[1;32m\n[!] All done!"
 echo -e "\033[1;32m[*] To use gui apps on your Windows10 host, install vcxsrv from: https://sourceforge.net/projects/vcxsrv/ "
 echo -e "\033[1;32m     and use: echo 'export DISPLAY=\"<host ip>:0.0\"'>>~/.bashrc;source ~/.bashrc"
 echo -e "\033[1;32m[*] Clean up with: cd ..;sudo rm -r Ubuntu20.04-Setup-Scripts"
+echo -e "\033[1;32m\n---------------------------------------------------------------------"
