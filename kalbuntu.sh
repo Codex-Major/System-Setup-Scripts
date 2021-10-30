@@ -10,6 +10,8 @@ sudo apt-get update
 sudo apt-get install sublime-text
 echo -e "\033[1;32m[+] Installing WPScan..."
 sudo gem install wpscan
+echo -e "\033[1;32m\n[+] Installing shodan..."
+pip install shodan
 echo -e "\033[1;32m[+] Installing SSLyze..."
 pip install --upgrade setuptools
 pip install sslyze
@@ -49,8 +51,6 @@ cd ~/Apps/impacket
 echo -e "\033[1;32m\n[*] Installing impacket..."
 python3 -m pip install .
 cd ..
-echo -e "\033[1;32m\n[+] Installing shodan..."
-pip install shodan
 echo -e "\033[1;32m\n[+] Cloning theHarvester..."
 git clone https://github.com/laramies/theHarvester
 echo -e "\033[1;32m\n[*] Installing theHarvester..."
