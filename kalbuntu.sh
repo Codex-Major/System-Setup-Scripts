@@ -49,9 +49,12 @@ cd ~/Apps/impacket
 echo -e "\033[1;32m\n[*] Installing impacket..."
 python3 -m pip install .
 cd ..
-echo -e "\033[1;32m\n[*] Installing theHarvester..."
+echo -e "\033[1;32m\n[+] Installing shodan..."
+pip install shodan
+echo -e "\033[1;32m\n[+] Cloning theHarvester..."
 git clone https://github.com/laramies/theHarvester
-sudo pip install aiohttp
+echo -e "\033[1;32m\n[*] Installing theHarvester..."
+pip install -r requirements.txt
 cd theHarvester
 sudo python3 setup.py install
 cd /usr/share
@@ -67,4 +70,5 @@ echo -e "\033[1;32m\n[!] All done!"
 echo -e "\033[1;32m[*] To use gui apps on your Windows10 host, install vcxsrv from: https://sourceforge.net/projects/vcxsrv/ "
 echo -e "\033[1;32m     and use: echo 'export DISPLAY=\"<host ip>:0.0\"'>>~/.bashrc;source ~/.bashrc"
 echo -e "\033[1;32m[*] Clean up with: cd ..;sudo rm -r Ubuntu20.04-Setup-Scripts"
+echo -e "\033[1;32m[*] Please run 'shodan init <api key>' before using shodan."
 echo -e "\033[1;32m\n---------------------------------------------------------------------"
