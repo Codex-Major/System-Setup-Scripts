@@ -10,6 +10,9 @@ sudo apt-get update
 sudo apt-get install sublime-text
 echo -e "\033[1;32m[+] Installing WPScan..."
 sudo gem install wpscan
+echo -e "\033[1;32m[+] Installing SSLyze..."
+pip install --upgrade setuptools
+pip install sslyze
 echo -e "\033[1;32m[+] Installing pipx..."
 python3 -m pip install pipx
 pipx ensurepath
