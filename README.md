@@ -62,3 +62,6 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I 
 
 # `curl`s these repos...
     Metasploit-----------https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb
+
+# `wget`s this tool...
+    wp6.sh---------------www.wifipineapple.com/wp6.sh
