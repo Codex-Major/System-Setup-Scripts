@@ -20,7 +20,7 @@ python3 -m pip install pipx
 pipx ensurepath
 echo -e "\033[1;32m[+] Installing CrackMapExec..."
 pipx install crackmapexec
-echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps"
+echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps..."
 mkdir ~/Apps
 cd ~/Apps
 echo -e "\033[1;32m\n[+] Installing Metasploit..."
@@ -33,7 +33,7 @@ echo -e "\033[1;32m\n[*] Installing SET..."
 pip install -r requirements.txt
 sudo python3 setup.py
 cd ..
-echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps/wifi-pineapple"
+echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps/wifi-pineapple..."
 mkdir ~/Apps/wifi-pineapple
 cd wifi-pineapple
 echo -e "\033[1;32m\n[+] Installing wp6.sh..."
@@ -71,8 +71,11 @@ cd /usr/share/wordlists
 echo -e "\033[1;32m\n[+] Cloning SecLists..."
 sudo git clone https://github.com/danielmiessler/SecLists
 echo -e "\033[1;32m\n[*] Ensuring that your distro is up to date..."
-source ~/.bash_aliases
 sudo apt update && sudo apt upgrade -y
+echo -e "\033[1;32m\n[*] Adding alias ls for 'ls -plash'..."
+echo 'alias ls="ls -plash"' >> ~/.bash_aliases
+echo -e "\033[1;32m\n[*] Running 'source ~/.bash_aliases'..."
+source ~/.bash_aliases
 echo -e "\033[1;32m\n---------------------------------------------------------------------"
 echo -e "\033[1;32m\n[!] All done!"
 echo -e "\033[1;32m[*] To use gui apps on your Windows10 host, install vcxsrv from: https://sourceforge.net/projects/vcxsrv/ "
