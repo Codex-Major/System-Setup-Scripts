@@ -33,6 +33,12 @@ echo -e "\033[1;32m\n[*] Installing SET..."
 pip install -r requirements.txt
 sudo python3 setup.py
 cd ..
+echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps/wifi-pineapple"
+mkdir ~/Apps/wifi-pineapple
+cd wifi-pineapple
+echo -e "\033[1;32m\n[+] Installing wp6.sh..."
+wget www.wifipineapple.com/wp6.sh
+chmod +x wp6.sh
 echo -e "\033[1;32m\n[+] Cloning Responder..."
 git clone https://github.com/trustedsec/Responder
 echo -e "\033[1;32m\n[*] Creating alias for Responder.py ..."
