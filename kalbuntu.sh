@@ -39,11 +39,12 @@ cd wifi-pineapple
 echo -e "\033[1;32m\n[+] Installing wp6.sh..."
 wget www.wifipineapple.com/wp6.sh
 chmod +x wp6.sh
+echo -e "\033[1;32m\n[*] Creating alias 'wp6' for wp6.sh..."
+echo 'alias wp6="cd ~/Apps/wifi-pineapple;/.wp6.sh"' >> ~/.bash_aliases
 echo -e "\033[1;32m\n[+] Cloning Responder..."
 git clone https://github.com/trustedsec/Responder
-echo -e "\033[1;32m\n[*] Creating alias for Responder.py ..."
-sudo echo "alias responder='python3 ~/Apps/Responder/Responder.py'" >> ~/.bash_aliases
-source ~/.bash_aliases
+echo -e "\033[1;32m\n[*] Creating alias 'responder' for Responder.py ..."
+echo "alias responder='python3 ~/Apps/Responder/Responder.py'" >> ~/.bash_aliases
 echo -e "\033[1;32m\n[+] Cloning Wordlist-Generator..."
 git clone https://github.com/Codex-Major/Wordlist-Generator
 echo -e "\033[1;32m\n[+] Cloning exploit-database..."
@@ -70,6 +71,7 @@ cd /usr/share/wordlists
 echo -e "\033[1;32m\n[+] Cloning SecLists..."
 sudo git clone https://github.com/danielmiessler/SecLists
 echo -e "\033[1;32m\n[*] Ensuring that your distro is up to date..."
+source ~/.bash_aliases
 sudo apt update && sudo apt upgrade -y
 echo -e "\033[1;32m\n---------------------------------------------------------------------"
 echo -e "\033[1;32m\n[!] All done!"
