@@ -2,9 +2,9 @@
 Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I can get to red-teaming ASAP. 
 
 # Usage
-  `git clone https://github.com/Codex-Major/Ubuntu20.04-Setup-Scripts`
+  `git clone https://github.com/Codex-Major/Ubuntu20.04-Setup-Script`
   
-  `cd Ubuntu20.04-Setup-Scripts;chmod +x kalbuntu.sh;./kalbuntu.sh`
+  `cd Ubuntu20.04-Setup-Script;chmod +x kalbuntu.sh;./kalbuntu.sh`
 
   ! To use GUI apps, install vcxsrv on your host... https://sourceforge.net/projects/vcxsrv/
   
@@ -17,6 +17,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I 
     aircrack-ng(suite)
     curl
     dirb
+    code
     exiftool
     firefox
     gobuster
@@ -27,6 +28,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I 
     neofetch
     net-tools
     nikto
+    nautilus
     nmap
     postgresql
     proxychains4
