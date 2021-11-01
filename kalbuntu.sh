@@ -1,24 +1,31 @@
 #!/bin/bash
+read -rp "[?] Would you like to install GUI apps also? (y/N) > " askGui
+if ["$askGui" == "y"] || ["$askGui" == "Y"]; then
+    read -rp "[?] IP of vcxsrv server? (ex. 192.168.1.123:0.0) > " guiSrv
+    echo 'export DISPLAY="$guiSrv"'>>~/.bashrc
+    source ~/.bashrc
+fi
 echo -e "\033[1;32m\n[*] Ensuring that your distro is up to date..."
 sudo apt update && sudo apt upgrade -y
 echo -e "\033[1;32m\n[+] Installing apt packages..."
-sudo apt install -y build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr apt-transport-https ruby python3 python3-pip python3-venv net-tools neofetch gobuster wfuzz nmap john aircrack-ng dirb sqlmap hydra proxychains4 nikto masscan recon-ng steghide libimage-exiftool-perl vim hashcat snapd firefox code nautilus krusader wireshark
-echo -e "\033[1;32m[+] Installing Sublime text editor..."
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get install sublime-text
-echo -e "\033[1;32m[+] Installing WPScan..."
+sudo apt install -y build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr apt-transport-https ruby python3 python3-pip python3-venv net-tools neofetch gobuster wfuzz nmap john aircrack-ng dirb sqlmap hydra proxychains4 nikto masscan recon-ng steghide libimage-exiftool-perl vim hashcat snapd
+if ["$askGui" == "y"] || ["$askGui" == "Y"]; then
+    echo -e "\033[1;32m\n[+] Installing gui apps"
+    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+    sudo apt-get update && sudo apt-get install -y sublime-text firefox code nautilus krusader wireshark
+fi
+echo -e "\033[1;32m\n[+] Installing WPScan..."
 sudo gem install wpscan
 echo -e "\033[1;32m\n[+] Installing shodan..."
 pip install shodan
-echo -e "\033[1;32m[+] Installing SSLyze..."
+echo -e "\033[1;32m\n[+] Installing SSLyze..."
 pip install --upgrade setuptools
 pip install sslyze
-echo -e "\033[1;32m[+] Installing pipx..."
+echo -e "\033[1;32m\n[+] Installing pipx..."
 python3 -m pip install pipx
 pipx ensurepath
-echo -e "\033[1;32m[+] Installing CrackMapExec..."
+echo -e "\033[1;32m\n[+] Installing CrackMapExec..."
 pipx install crackmapexec
 echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps..."
 mkdir ~/Apps
@@ -36,15 +43,18 @@ cd ..
 echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps/wifi-pineapple..."
 mkdir ~/Apps/wifi-pineapple
 cd wifi-pineapple
-echo -e "\033[1;32m\n[+] Installing wp6.sh..."
+echo -e "\033[1;32m\n[+] Installing Hak5's wp6.sh..."
 wget www.wifipineapple.com/wp6.sh
 chmod +x wp6.sh
+cd ..
 echo -e "\033[1;32m\n[*] Creating alias 'wp6' for wp6.sh..."
 echo 'alias wp6="cd ~/Apps/wifi-pineapple;/.wp6.sh"' >> ~/.bash_aliases
+source ~/.bash_aliases
 echo -e "\033[1;32m\n[+] Cloning Responder..."
 git clone https://github.com/trustedsec/Responder
 echo -e "\033[1;32m\n[*] Creating alias 'responder' for Responder.py ..."
 echo "alias responder='python3 ~/Apps/Responder/Responder.py'" >> ~/.bash_aliases
+source ~/.bash_aliases
 echo -e "\033[1;32m\n[+] Cloning Wordlist-Generator..."
 git clone https://github.com/Codex-Major/Wordlist-Generator
 echo -e "\033[1;32m\n[+] Cloning exploit-database..."
@@ -70,16 +80,12 @@ sudo mkdir /usr/share/wordlists
 cd /usr/share/wordlists
 echo -e "\033[1;32m\n[+] Cloning SecLists..."
 sudo git clone https://github.com/danielmiessler/SecLists
-echo -e "\033[1;32m\n[*] Ensuring that your distro is up to date..."
-sudo apt update && sudo apt upgrade -y
-echo -e "\033[1;32m\n[*] Adding alias ls for 'ls -plash'..."
-echo 'alias ls="ls -plash"' >> ~/.bash_aliases
-echo -e "\033[1;32m\n[*] Running 'source ~/.bash_aliases'..."
-source ~/.bash_aliases
 echo -e "\033[1;32m\n---------------------------------------------------------------------"
 echo -e "\033[1;32m\n[!] All done!"
-echo -e "\033[1;32m[*] To use gui apps on your Windows10 host, install vcxsrv from: https://sourceforge.net/projects/vcxsrv/ "
-echo -e "\033[1;32m     and use: echo 'export DISPLAY=\"<host ip>:0.0\"'>>~/.bashrc;source ~/.bashrc"
-echo -e "\033[1;32m[*] Clean up with: cd ..;sudo rm -r Ubuntu20.04-Setup-Scripts"
-echo -e "\033[1;32m[*] Please run 'shodan init <api key>' before using shodan."
+if ["$askGui" == "y"] || ["$askGui" == "Y"]; then 
+    echo -e "\033[1;32m\n[*] On your Win10 host, be sure to install vcxsrv from: https://sourceforge.net/projects/vcxsrv/ "
+    echo -e " [*] Visit https://portswigger.net/burp/releases to install BurpSuite."
+fi
+echo -e "\033[1;32m\n[*] Clean up with: cd ..;sudo rm -r Ubuntu20.04-Setup-Scripts"
+echo -e "\033[1;32m\n[*] Please run 'shodan init <api key>' before using shodan."
 echo -e "\033[1;32m\n---------------------------------------------------------------------"
