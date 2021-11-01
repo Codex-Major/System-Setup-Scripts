@@ -8,63 +8,58 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I 
 
   ! To use GUI apps, install vcxsrv on your host... https://sourceforge.net/projects/vcxsrv/
   
-   on the server `export DISPLAY="<host ip>:<display #>"`
-   
-   for persistence concatenate the export statement to your `~/.bashrc` file.
-  
-
-# `apt install`s these packages... (and their dependencies.)
-    aircrack-ng(suite)
-    curl
-    dirb
-    code
-    exiftool
-    firefox
-    gobuster
-    hashcat
-    hydra
-    john
-    krusader
-    masscan
-    neofetch
-    net-tools
-    nikto
-    nautilus
-    nmap
-    postgresql
-    proxychains4
-    python3
-    python3-pip
-    python3-venv
-    recon-ng
-    ruby
-    snapd
-    sqlite3
-    sqlmap
-    steghide
-    subl
-    vim
-    wfuzz
-    wireshark
-    wpscan
+# Optional GUI apps/tools.
+    code--------apt
+    firefox-----apt
+    krusader----apt
+    nautilus----apt
+    subl--------wget
+    wireshark---apt
     
-# `pip install`s these packages...(or pipx)
-    crackmapexec
-    sslyze
-    shodan
-    pipx
-
-# `git clone`s these repos... (and installs them accordingly.)
+# Intalls these tools/packages... (and their dependencies.)
+    aircrack-ng(suite)---apt
+    crackmapexec---------pipx
+    curl-----------------apt
+    dirb-----------------apt
+    exiftool-------------apt
     Exploitdb------------https://github.com/offensive-security/exploitdb.git
+    gobuster-------------apt
+    hashcat--------------apt
+    hydra----------------apt
     Impacket-------------https://github.com/SecureAuthCorp/impacket
+    john-----------------apt
+    masscan--------------apt
+    neofetch-------------apt
+    net-tools------------apt
+    nikto----------------apt
+    nmap-----------------apt
+    pipx-----------------apt
+    postgresql-----------apt
+    proxychains4---------apt
+    python3--------------apt
+    python3-pip----------apt
+    python3-venv---------apt
+    recon-ng-------------apt
     Responder------------https://github.com/trustedsec/Responder
+    ruby-----------------apt
     SEToolkit------------https://github.com/trustedsec/social-engineer-toolkit
-    SeclLists------------https://github.com/danielmiessler/SecLists
+    shodan---------------pip
+    snapd----------------apt
+    sqlite3--------------apt
+    sqlmap---------------apt
+    sslyze---------------pip
+    steghide-------------apt
+    subl-----------------apt (special)
     TheHarvester---------https://github.com/laramies/theHarvester
-    Wordlist-Generator---https://github.com/Codex-Major/Wordlist-Generator
+    vim------------------apt
+    wfuzz----------------apt
+    wpscan---------------gem
 
 # `curl`s these repos...
     Metasploit-----------https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb
+
+# `git clone`s these repos... (into /usr/share/wordlists)
+    SeclLists------------https://github.com/danielmiessler/SecLists
 
 # `wget`s this tool...
     wp6.sh---------------www.wifipineapple.com/wp6.sh
