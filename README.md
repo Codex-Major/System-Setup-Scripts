@@ -24,6 +24,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I 
     hashcat
     hydra
     john
+    krusader
     masscan
     neofetch
     net-tools
