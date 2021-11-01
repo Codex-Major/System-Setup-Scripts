@@ -18,6 +18,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I 
     
 # Intalls these tools/packages... (and their dependencies.)
     aircrack-ng(suite)---apt
+    binwalk--------------apt
     crackmapexec---------pipx
     curl-----------------apt
     dirb-----------------apt
