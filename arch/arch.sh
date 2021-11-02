@@ -32,9 +32,9 @@ else
     echo "[-] Not installing GUI apps!"
 fi
 echo "[+] Installing pacman packages..."
-sudo -H -u $currUser bash -c 'sudo pacman -S aircrack-ng binwalk curl git hashcat hydra impacket john net-tools nikto nmap masscan python3 ruby sqlmap vim wget wpscan yay --noconfirm'
+sudo -H -u $currUser bash -c 'sudo pacman -S aircrack-ng binwalk curl git hashcat hydra impacket john net-tools nikto nmap masscan python3 ruby sqlmap vim wget exploitdb wpscan yay --noconfirm'
 echo "[+] Installing yay cli packages..."
-sudo -H -u $currUser bash -c 'yay -S lsd dirb gobuster dirsearch recon-ng proxychains python-pip responder steghide sslyze wfuzz wordlists --noconfirm'
+sudo -H -u $currUser bash -c 'yay -S lsd dirb gobuster dirsearch recon-ng proxychains-ng python-pip responder steghide sslyze wfuzz wordlists --noconfirm'
 echo "[+] Installing pip packages..."
 sudo -H -u $currUser bash -c 'pip install crackmapexec shodan'
 echo "[*] Adding to ~/.bash_aliases..."
