@@ -1,9 +1,7 @@
 # arch.sh
-------------------------------------------
 Bash script to install my favorite tools on Arch linux.
 
 # Usage
-------------------------------------------
   `git clone https://github.com/Codex-Major/System-Setup-Scripts`
    
   `cd System-Setup-Scripts/arch;chmod +x arch.sh;./arch.sh`
