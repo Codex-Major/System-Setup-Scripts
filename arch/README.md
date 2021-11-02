@@ -8,6 +8,8 @@ Bash script to install my favorite tools on Arch linux.
     
   ! To use GUI apps, install vcxsrv on your host... https://sourceforge.net/projects/vcxsrv/
   
+  ? The sudoers-file.txt is a normal /etc/sudoers file with `%wheel ALL=(ALL) ALL` uncommented. Used when a new user is added.
+  
 # Optional GUI apps/tools...
       firefox-----------------pacman
       firefox-dark-reader-----pacman
@@ -50,13 +52,3 @@ Bash script to install my favorite tools on Arch linux.
       wordlists------yay
       wpscan---------pacman
       yay------------pacman
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
