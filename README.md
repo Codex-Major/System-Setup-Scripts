@@ -24,6 +24,7 @@ Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I 
     dirb-----------------apt
     exiftool-------------apt
     Exploitdb------------https://github.com/offensive-security/exploitdb.git
+    git-------------apt
     gobuster-------------apt
     hashcat--------------apt
     hydra----------------apt
