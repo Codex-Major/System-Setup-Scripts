@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "[*] Ensuring your distro is up to date..."
+pacman-key --init
 pacman -Syu
 read -r -p "[->] Add a new user? (y/N): " ans1
 if [ "$ans1" == "y" ] || [ "$ans1" == "Y" ]; then
@@ -30,12 +31,9 @@ else
     echo "[-] Not installing GUI apps!"
 fi
 echo "[+] Installing pacman packages..."
-sudo -H -u $currUser bash -c 'sudo pacman -S sudo perl git python3 aircrack-ng android-tools binwalk code ettercap exploitdb hashcat hashcat-utils hexdump hydra hwinfo nikto net-tools neofetch nmap postgresql proxychains-ng routersploit tcpdump tor traceroute ufw vulscan wget whois wpscan --noconfirm'
-echo "[*] Making new dir /home/$currUser/Apps"
-sudo -H -u $currUser bash -c 'mkdir /home/$USER/Apps'
-sudo -H -u $currUser bash -c 'cd /home/$USER/Apps'
-echo "[+] Installing dirsearch..."
-sudo -H -u $currUser bash -c 'sudo pacman -S python-certifi python-cffi python-chardet python-cryptography python-pysocks python-urllib3 --noconfirm'
-sudo -H -u $currUser bash -c '/home/$USER/Apps;git clone https://aur.archlinux.org/dirsearch.git'
-sudo -H -u $currUser bash -c 'cd /home/$USER/Apps/dirsearch;makepkg;cd src/dirsearch-0.4.2;sudo python3 setup.py install'
+sudo -H -u $currUser bash -c 'sudo pacman -S aircrack-ng binwalk curl git hashcat hydra impacket john net-tools nikto nmap masscan python3 python3-pip ruby sqlmap vim wget wpscan --noconfirm'
+echo "[+] Installing yay cli packages..."
+sudo -H -u $currUser bash -c 'yay -S lsd dirb gobuster dirsearch recon-ng proxychains python-pip responder steghide sslyze wfuzz wordlists --noconfirm'
+echo "[+] Installing pip packages..."
+sudo -H -u $currUser bash -c 'pip install crackmapexec shodan'
 echo "[!] All done!"
