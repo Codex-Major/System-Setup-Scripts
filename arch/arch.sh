@@ -37,3 +37,6 @@ sudo -H -u $currUser bash -c 'yay -S lsd dirb gobuster dirsearch recon-ng proxyc
 echo "[+] Installing pip packages..."
 sudo -H -u $currUser bash -c 'pip install crackmapexec shodan'
 echo "[!] All done!"
+echo "------------------------------------------------------------"
+echo -e "[!] Clean up (for safety) by doing 'cd ..;cd ..;sudo rm -r System-Setup-Scripts' \n"
+
