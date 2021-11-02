@@ -11,6 +11,7 @@ Bash script to install my favorite tools on Arch linux.
   ? The sudoers-file.txt is a normal /etc/sudoers file with `%wheel ALL=(ALL) ALL` uncommented. Used when a new user is added.
   
 # Optional GUI apps/tools...
+      code--------------------yay
       firefox-----------------pacman
       firefox-dark-reader-----pacman
       firefox-ublock-origin---pacman
