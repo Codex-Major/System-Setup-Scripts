@@ -26,6 +26,7 @@ Bash script to install my favorite tools on Arch linux.
       curl-----------pacman
       dirb-----------yay
       dirsearch------yay
+      exploitdb------pacman
       git------------pacman
       gobuster-------yay
       hashcat--------pacman
@@ -37,7 +38,7 @@ Bash script to install my favorite tools on Arch linux.
       net-tools------pacman
       nikto----------pacman
       nmap-----------pacman
-      proxychains----yay
+      proxychains-ng----yay
       python-pip-----yay
       python3--------pacman
       recon-ng-------yay
