@@ -25,8 +25,9 @@ read -r -p "[->] Would you like to install GUI apps as well? (y/N): " guiInst
 if [ "$guiInst" == "y" ] || [ "$guiInst" == "yes"]; then
     read -r -p "[->] IP of Vcxsrv server? (ex. 192.168.1.123:0.0 ): " guisrv
     sudo -H -u $currUser bash -c "echo 'export DISPLAY="$guisrv"'>>~/.bashrc;source ~/.bashrc"
-    echo "[+] Installing GUI apps through pacman..."
+    echo "[+] Installing GUI apps..."
     sudo -H -u $currUser bash -c 'sudo pacman -S firefox firefox-dark-reader firefox-ublock-origin krusader kate nautilus --noconfirm'
+    sudo -H -u $currUser bash -c 'yay -S code --noconfirm'
 else
     echo "[-] Not installing GUI apps!"
 fi
@@ -37,7 +38,7 @@ sudo -H -u $currUser bash -c 'yay -S lsd dirb gobuster dirsearch recon-ng proxyc
 echo "[+] Installing pip packages..."
 sudo -H -u $currUser bash -c 'pip install crackmapexec shodan'
 echo "[*] Adding to ~/.bash_aliases..."
-sudo -H -u $currUser bash -c "echo 'alias ls='lsd -lah''>>/home/$currUser/.bash_aliases "
+sudo -H -u $currUser bash -c "echo 'alias ls='lsd -lah''>>~/.bash_aliases "
 sudo -H -u $currUser bash -c 'source ~/.bash_aliases'
 echo "[!] All done!"
 echo "------------------------------------------------------------"
