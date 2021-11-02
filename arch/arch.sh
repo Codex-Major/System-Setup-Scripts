@@ -36,6 +36,9 @@ echo "[+] Installing yay cli packages..."
 sudo -H -u $currUser bash -c 'yay -S lsd dirb gobuster dirsearch recon-ng proxychains python-pip responder steghide sslyze wfuzz wordlists --noconfirm'
 echo "[+] Installing pip packages..."
 sudo -H -u $currUser bash -c 'pip install crackmapexec shodan'
+echo "[*] Adding to ~/.bash_aliases..."
+sudo -H -u $currUser bash -c "echo 'alias ls='lsd -lah''>>/home/$currUser/.bash_aliases "
+sudo -H -u $currUser bash -c 'source ~/.bash_aliases'
 echo "[!] All done!"
 echo "------------------------------------------------------------"
 echo -e "[!] Clean up (for safety) by doing 'cd ..;cd ..;sudo rm -r System-Setup-Scripts' \n"
