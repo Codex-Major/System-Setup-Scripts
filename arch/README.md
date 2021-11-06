@@ -2,6 +2,12 @@
 Bash script to install my favorite tools on Arch linux.
 
 # Usage
+  After using MatMoul's archfi.sh script to part drives and install a few base things...https://sourceforge.net/projects/archfi/
+  
+  This script acts as a replacement for the archdi desktop installation script...https://github.com/MatMoul/archdi
+  
+  (As root)
+  
   `git clone https://github.com/Codex-Major/System-Setup-Scripts`
    
   `cd System-Setup-Scripts/arch;chmod +x arch.sh;./arch.sh`
@@ -9,6 +15,9 @@ Bash script to install my favorite tools on Arch linux.
   ! To use GUI apps, install vcxsrv on your host... https://sourceforge.net/projects/vcxsrv/
   
   ? The sudoers-file.txt is a normal /etc/sudoers file with `%wheel ALL=(ALL) ALL` uncommented. Used when a new user is added.
+  
+  ? If bash is screaming about line endings... /bin/bash^M:
+    use `dos2unix` to convert the script.
   
 # Optional GUI apps/tools...
       code--------------------yay
