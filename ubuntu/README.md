@@ -1,5 +1,5 @@
 # Kalbuntu
-Bash script to install all of my favorite tools from Kali on Ubuntu-20.04, so I can get to red-teaming ASAP. 
+Bash script to install all of my favorite tools on Ubuntu-20.04, so I can get to red-teaming ASAP. 
 
 # Usage
   `git clone https://github.com/Codex-Major/System-Setup-Scripts`
