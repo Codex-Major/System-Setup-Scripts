@@ -4,22 +4,20 @@ Bash script to install my favorite tools on Arch linux.
 # Usage
   After using MatMoul's archfi.sh script to part drives and install a few base things...https://sourceforge.net/projects/archfi/
   
-  This script acts in supplement to the archdi desktop installation script...https://github.com/MatMoul/archdi
+  This script acts as replacement/supplement to the archdi desktop installation script...https://github.com/MatMoul/archdi
   
   (As root)
   
-  `git clone https://github.com/Codex-Major/System-Setup-Scripts`
-   
-  `cd System-Setup-Scripts/arch;chmod +x arch.sh;./arch.sh`
+    pacman -S git --noconfirm;git clone https://github.com/Codex-Major/System-Setup-Scripts;cd System-Setup-Scripts/arch;chmod +x arch.sh;./arch.sh
     
   ! To use GUI apps, install vcxsrv on your host... https://sourceforge.net/projects/vcxsrv/
   
   ? The sudoers-file.txt is a normal /etc/sudoers file with `%wheel ALL=(ALL) ALL` uncommented. Used when a new user is added.
   
-  ? If bash is screaming about line endings... /bin/bash^M:
+  ? If bash is screaming about line endings...(or interpreter)
     use `dos2unix` to convert the script.
   
-# Optional GUI apps/tools...
+# Optional GUI apps/CLI tools...
       code--------------------yay
       firefox-----------------pacman
       firefox-dark-reader-----pacman
@@ -27,6 +25,9 @@ Bash script to install my favorite tools on Arch linux.
       krusader----------------pacman
       kate--------------------pacman
       nautilus----------------pacman
+      
+      openssh-----------------pacman
+      ufw---------------------pacman
       
 # Installs these tools...
       aircrack-ng----pacman
