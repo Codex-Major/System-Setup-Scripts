@@ -2,6 +2,7 @@
 echo "[*] Ensuring your distro is up to date..."
 pacman-key --init
 pacman -Syu
+
 read -r -p "[->] Add a new user? (y/N): " ans1
 if [ "$ans1" == "y" ] || [ "$ans1" == "Y" ]; then
     echo "[+] Installing sudo..."
@@ -21,26 +22,38 @@ else
     echo "[-] No new user added."
     read -r -p "[->] What user is permmitted to install packages?(NOT root): " currUser
 fi
+
 read -r -p "[->] Would you like to install GUI apps as well? (y/N): " guiInst
 if [ "$guiInst" == "y" ] || [ "$guiInst" == "yes"]; then
     read -r -p "[->] IP of Vcxsrv server? (ex. 192.168.1.123:0.0 ): " guisrv
     sudo -H -u $currUser bash -c "echo 'export DISPLAY="$guisrv"'>>~/.bashrc;source ~/.bashrc"
-    echo "[+] Installing GUI apps..."
-    sudo -H -u $currUser bash -c 'sudo pacman -S firefox firefox-dark-reader firefox-ublock-origin krusader kate nautilus --noconfirm'
-    sudo -H -u $currUser bash -c 'yay -S code --noconfirm'
 else
     echo "[-] Not installing GUI apps!"
 fi
+
+echo "[+] Installing yay..."
+sudo -H -u $currUser bash -c 'sudo pacman -S git --noconfirm'
+sudo -H -u $currUser bash -c 'cd /opt;sudo git clone https://aur.archlinux.org/yay-git.git;sudo chown -R $currUser:$currUser ./yay-git;cd yay-git;makepkg -si'
+echo "[+] Running 'yay -Syu' as $currUser..."
+sudo -H -u $currUser bash -c 'yay -Syu'
+
+if [ "$guiInst" == "y" ] || [ "$guiInst" == "yes"]; then
+    echo "[+] Installing GUI apps..."
+    sudo -H -u $currUser bash -c 'sudo pacman -S firefox firefox-dark-reader firefox-ublock-origin krusader kate nautilus --noconfirm'
+    sudo -H -u $currUser bash -c 'yay -S code --noconfirm'
+fi
+
 echo "[+] Installing pacman packages..."
 sudo -H -u $currUser bash -c 'sudo pacman -S aircrack-ng binwalk curl git hashcat hydra impacket john net-tools nikto nmap masscan python3 ruby sqlmap vim wget exploitdb wpscan yay --noconfirm'
 echo "[+] Installing yay cli packages..."
 sudo -H -u $currUser bash -c 'yay -S lsd dirb gobuster dirsearch recon-ng proxychains-ng python-pip responder steghide sslyze wfuzz wordlists --noconfirm'
 echo "[+] Installing pip packages..."
 sudo -H -u $currUser bash -c 'pip install crackmapexec shodan'
+
 echo "[*] Adding to ~/.bash_aliases..."
 sudo -H -u $currUser bash -c "echo 'alias ls='lsd -lah''>>~/.bash_aliases "
 sudo -H -u $currUser bash -c 'source ~/.bash_aliases'
+
 echo "[!] All done!"
 echo "------------------------------------------------------------"
-echo -e "[!] Clean up (for safety) by doing 'cd ..;cd ..;sudo rm -r System-Setup-Scripts' \n"
-
+echo "[!] Clean up (for safety) by doing 'cd ..;cd ..;sudo rm -r System-Setup-Scripts'"
