@@ -4,7 +4,7 @@ Bash script to install my favorite tools on Arch linux.
 # Usage
   After using MatMoul's archfi.sh script to part drives and install a few base things...https://sourceforge.net/projects/archfi/
   
-  This script acts as a replacement for the archdi desktop installation script...https://github.com/MatMoul/archdi
+  This script acts in supplement to the archdi desktop installation script...https://github.com/MatMoul/archdi
   
   (As root)
   
@@ -62,4 +62,4 @@ Bash script to install my favorite tools on Arch linux.
       wget-----------pacman
       wordlists------yay
       wpscan---------pacman
-      yay------------pacman
+      yay------------git
