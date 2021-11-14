@@ -1,7 +1,7 @@
 #!/bin/bash
 read -rp "[?] Would you like to install GUI apps also? (y/N) > " askGui
 if ["$askGui" == "y"] || ["$askGui" == "Y"]; then
-    read -rp "[?] IP of vcxsrv server? (ex. 192.168.1.123:0.0) > " guiSrv
+    read -r -p "[?] IP of vcxsrv server? (ex. 192.168.1.123:0.0) > " guiSrv
     echo 'export DISPLAY="$guiSrv"'>>~/.bashrc
     source ~/.bashrc
 fi
