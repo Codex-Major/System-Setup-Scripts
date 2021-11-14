@@ -82,4 +82,4 @@ sudo -H -u $currUser bash -c "sudo ln -s /dev/null /etc/udev/rules.d/80-net-setu
 
 echo "[!] All done!"
 echo "------------------------------------------------------------"
-echo "[!] Clean up (for safety) by doing 'cd ..;cd ..;sudo rm -r System-Setup-Scripts'"
+echo "[!] Clean up (for safety) with: cd ../..;sudo rm -r System-Setup-Scripts"
