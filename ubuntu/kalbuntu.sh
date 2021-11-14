@@ -86,6 +86,6 @@ if ["$askGui" == "y"] || ["$askGui" == "Y"]; then
     echo -e "\033[1;32m\n[*] On your Win10 host, be sure to install vcxsrv from: https://sourceforge.net/projects/vcxsrv/ "
     echo -e " [*] Visit https://portswigger.net/burp/releases to install BurpSuite."
 fi
-echo -e "\033[1;32m\n[*] Clean up with: cd ..;sudo rm -r Ubuntu20.04-Setup-Scripts"
+echo -e "\033[1;32m\n[*] Clean up with: cd ../..;sudo rm -r System-Setup-Scripts"
 echo -e "\033[1;32m\n[*] Please run 'shodan init <api key>' before using shodan."
 echo -e "\033[1;32m\n---------------------------------------------------------------------"
