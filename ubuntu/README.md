@@ -1,5 +1,8 @@
 # Kalbuntu
-Bash script to install all of my favorite tools on Ubuntu-20.04, so I can get to red-teaming ASAP. 
+Bash script to install all of my favorite tools on Ubuntu based distros, so I can get to red-teaming ASAP.
+
+If you are using Linux Mint 20 to enable snapd you must:
+  `sudo rm /etc/apt/preferences.d/nosnap.pref`
 
 # Usage
   `git clone https://github.com/Codex-Major/System-Setup-Scripts`
