@@ -19,10 +19,10 @@ fi
 echo -e "\033[1;32m\n[+] Installing WPScan..."
 sudo gem install wpscan
 echo -e "\033[1;32m\n[+] Installing shodan..."
-pip install shodan
+python3 -m pip install shodan
 echo -e "\033[1;32m\n[+] Installing SSLyze..."
-pip install --upgrade setuptools
-pip install sslyze
+python3 -m pip install --upgrade setuptools
+python3 -m pip install sslyze
 echo -e "\033[1;32m\n[+] Installing pipx..."
 python3 -m pip install pipx
 pipx ensurepath
@@ -38,7 +38,7 @@ echo -e "\033[1;32m\n[+] Cloning social-engineer-toolkit..."
 git clone https://github.com/trustedsec/social-engineer-toolkit/ SET/
 cd SET
 echo -e "\033[1;32m\n[*] Installing SET..."
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 sudo python3 setup.py
 cd ..
 echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps/wifi-pineapple..."
@@ -72,7 +72,7 @@ cd ..
 echo -e "\033[1;32m\n[+] Cloning theHarvester..."
 git clone https://github.com/laramies/theHarvester
 echo -e "\033[1;32m\n[*] Installing theHarvester..."
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 cd theHarvester
 sudo python3 setup.py install
 cd /usr/share
