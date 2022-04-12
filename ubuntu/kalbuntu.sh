@@ -1,6 +1,6 @@
 #!/bin/bash
 read -r -p "[?] Would you like to install GUI apps also? (y/N) > " askGui
-if ["$askGui" == "y"] || ["$askGui" == "Y"]; then
+if [ "$askGui" == "y" ] || [ "$askGui" == "Y" ]; then
     read -r -p "[?] IP of vcxsrv server? (ex. 192.168.1.123:0.0) > " guiSrv
     echo 'export DISPLAY="$guiSrv"'>>~/.bashrc
     source ~/.bashrc
@@ -10,7 +10,7 @@ sudo apt update && sudo apt upgrade -y
 echo -e "\033[1;32m\n[+] Installing apt packages..."
 sudo apt install -y build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr apt-transport-https ruby pastebinit python3 python3-pip python3-venv net-tools neofetch gobuster wfuzz nmap john aircrack-ng dirb sqlmap hydra proxychains4 nikto masscan recon-ng steghide libimage-exiftool-perl vim hashcat
 sudo apt install snapd -y
-if ["$askGui" == "y"] || ["$askGui" == "Y"]; then
+if [ "$askGui" == "y" ] || [ "$askGui" == "Y" ]; then
     echo -e "\033[1;32m\n[+] Installing gui apps"
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -83,7 +83,7 @@ echo -e "\033[1;32m\n[+] Cloning SecLists..."
 sudo git clone https://github.com/danielmiessler/SecLists
 echo -e "\033[1;32m\n---------------------------------------------------------------------"
 echo -e "\033[1;32m\n[!] All done!"
-if ["$askGui" == "y"] || ["$askGui" == "Y"]; then 
+if [ "$askGui" == "y" ] || [ "$askGui" == "Y" ]; then 
     echo -e "\033[1;32m\n[*] On your Win10 host, be sure to install vcxsrv from: https://sourceforge.net/projects/vcxsrv/ "
     echo -e " [*] Visit https://portswigger.net/burp/releases to install BurpSuite."
 fi
