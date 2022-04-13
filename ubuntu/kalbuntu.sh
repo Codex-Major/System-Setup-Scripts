@@ -28,9 +28,9 @@ python3 -m pip install pipx
 pipx ensurepath
 echo -e "\033[1;32m\n[+] Installing CrackMapExec..."
 pipx install crackmapexec
-echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps..."
-mkdir ~/Apps
-cd ~/Apps
+echo -e "\033[1;32m\n[!] Attempting to mkdir ~/.apps..."
+mkdir ~/.apps
+cd ~/.apps
 echo -e "\033[1;32m\n[+] Installing Metasploit..."
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 rm msfinstall
@@ -42,7 +42,7 @@ python3 -m pip install -r requirements.txt
 sudo python3 setup.py
 cd ..
 echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps/wifi-pineapple..."
-mkdir ~/Apps/wifi-pineapple
+mkdir ~/.apps/wifi-pineapple
 cd wifi-pineapple
 echo -e "\033[1;32m\n[+] Installing Hak5's wp6.sh..."
 wget www.wifipineapple.com/wp6.sh
@@ -65,7 +65,7 @@ sudo ln -sf /opt/exploit-database/searchsploit /usr/local/bin/searchsploit
 sudo cp -n /opt/exploit-database/.searchsploit_rc ~/
 echo -e "\033[1;32m\n[+] Cloning impacket..."
 git clone https://github.com/SecureAuthCorp/impacket
-cd ~/Apps/impacket
+cd ~/.apps/impacket
 echo -e "\033[1;32m\n[*] Installing impacket..."
 python3 -m pip install .
 cd ..
