@@ -27,6 +27,7 @@ If you are using Linux Mint 20 to enable snapd you must:
     dirb-----------------apt
     exiftool-------------apt
     Exploitdb------------https://github.com/offensive-security/exploitdb.git
+    git-core-------------apt
     git------------------apt
     gobuster-------------apt
     hashcat--------------apt
@@ -38,6 +39,7 @@ If you are using Linux Mint 20 to enable snapd you must:
     net-tools------------apt
     nikto----------------apt
     nmap-----------------apt
+    onesixtyone----------apt
     pipx-----------------apt
     postgresql-----------apt
     proxychains4---------apt
@@ -47,9 +49,12 @@ If you are using Linux Mint 20 to enable snapd you must:
     recon-ng-------------apt
     Responder------------https://github.com/trustedsec/Responder
     ruby-----------------apt
+    searchsploit---------snap
     SEToolkit------------https://github.com/trustedsec/social-engineer-toolkit
     shodan---------------pip
+    smbclient------------apt
     snapd----------------apt
+    snmpwalk-------------apt
     sqlite3--------------apt
     sqlmap---------------apt
     sslyze---------------pip
@@ -58,6 +63,7 @@ If you are using Linux Mint 20 to enable snapd you must:
     TheHarvester---------https://github.com/laramies/theHarvester
     vim------------------apt
     wfuzz----------------apt
+    whatweb--------------apt
     wpscan---------------gem
 
 # `curl`s these repos...
