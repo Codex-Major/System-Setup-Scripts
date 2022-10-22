@@ -8,8 +8,10 @@ fi
 echo -e "\033[1;32m\n[*] Ensuring that your distro is up to date..."
 sudo apt update && sudo apt upgrade -y
 echo -e "\033[1;32m\n[+] Installing apt packages..."
-sudo apt install -y build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr apt-transport-https ruby pastebinit python3 python3-pip python3-venv net-tools neofetch gobuster wfuzz nmap john aircrack-ng dirb sqlmap hydra proxychains4 nikto masscan recon-ng steghide libimage-exiftool-perl vim hashcat
+sudo apt install build-essential libreadline-dev libssl-dev libpq5 libpq-dev libreadline5 libsqlite3-dev libpcap-dev git-core autoconf postgresql pgadmin3 curl zlib1g-dev libxml2-dev libxslt1-dev libyaml-dev zlib1g-dev gawk bison libffi-dev libgdbm-dev libncurses5-dev libtool sqlite3 libgmp-dev gnupg2 dirmngr apt-transport-https ruby pastebinit python3 python3-pip python3-venv net-tools neofetch gobuster wfuzz nmap john aircrack-ng dirb sqlmap hydra proxychains4 nikto masscan recon-ng steghide libimage-exiftool-perl vim hashcat -y
+sudo apt install smbclient snmp whatweb -y 
 sudo apt install snapd -y
+sudo snap install searchsploit
 if [ "$askGui" == "y" ] || [ "$askGui" == "Y" ]; then
     echo -e "\033[1;32m\n[+] Installing gui apps"
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -29,8 +31,8 @@ pipx ensurepath
 echo -e "\033[1;32m\n[+] Installing CrackMapExec..."
 pipx install crackmapexec
 echo -e "\033[1;32m\n[!] Attempting to mkdir ~/.apps..."
-mkdir ~/.apps
-cd ~/.apps
+mkdir ~/.Apps
+cd ~/.Apps
 echo -e "\033[1;32m\n[+] Installing Metasploit..."
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && chmod 755 msfinstall && ./msfinstall
 rm msfinstall
@@ -42,7 +44,7 @@ python3 -m pip install -r requirements.txt
 sudo python3 setup.py
 cd ..
 echo -e "\033[1;32m\n[!] Attempting to mkdir ~/Apps/wifi-pineapple..."
-mkdir ~/.apps/wifi-pineapple
+mkdir ~/.Apps/wifi-pineapple
 cd wifi-pineapple
 echo -e "\033[1;32m\n[+] Installing Hak5's wp6.sh..."
 wget www.wifipineapple.com/wp6.sh
@@ -81,6 +83,8 @@ sudo mkdir /usr/share/wordlists
 cd /usr/share/wordlists
 echo -e "\033[1;32m\n[+] Cloning SecLists..."
 sudo git clone https://github.com/danielmiessler/SecLists
+echo -e "\033[1;32m\n[+] Cloning PEASS-ng..."
+git clone https://github.com/carlospolop/PEASS-ng
 echo -e "\033[1;32m\n---------------------------------------------------------------------"
 echo -e "\033[1;32m\n[!] All done!"
 if [ "$askGui" == "y" ] || [ "$askGui" == "Y" ]; then 
